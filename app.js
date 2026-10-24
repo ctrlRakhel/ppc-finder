@@ -12,9 +12,8 @@
     konark: ['Konark SO', 19.89046051681591, 86.09858469288149]
   };
   const parseStore = (key) => { try { return JSON.parse(localStorage.getItem(key)); } catch { return null; } };
-  const stored = parseStore(STORAGE_CATALOG);
-  let records = Array.isArray(stored) ? stored : seed;
-  let imported = Array.isArray(stored);
+  let records = seed;
+  let imported = false;
   let favorites = new Set(Array.isArray(parseStore(STORAGE_FAVORITES)) ? parseStore(STORAGE_FAVORITES) : []);
   let point = null, gpsRequest = 0, savedOnly = false;
   const html = (val) => String(val ?? '').replace(/[&<>"']/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
@@ -166,8 +165,6 @@
   ['search-input','radius-select'].forEach(id=>$(id).addEventListener(id==='search-input'?'input':'change',updateResults));
   $('saved-filter').addEventListener('click',()=>{savedOnly=!savedOnly;$('saved-filter').setAttribute('aria-pressed',String(savedOnly));$('saved-filter').textContent=savedOnly?'♥ Showing saved':'♡ Saved only';updateResults();});
   $('results-list').addEventListener('click',event=>{const btn=event.target.closest('button[data-favorite]');if(!btn)return;const k=btn.dataset.favorite;if(favorites.has(k))favorites.delete(k);else favorites.add(k);try{localStorage.setItem(STORAGE_FAVORITES,JSON.stringify([...favorites]));}catch{}updateResults();});
-  $('json-import').addEventListener('change',onImport);
-  $('reset-data').addEventListener('click',()=>{localStorage.removeItem(STORAGE_CATALOG);records=seed;imported=false;$('import-feedback').textContent='Site directory restored in this browser.';renderMetrics();updateResults();});
   renderMetrics();updateResults();
   requestLocation(true);
 })();
