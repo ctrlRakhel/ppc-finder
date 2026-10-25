@@ -1,77 +1,309 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#193e3b" />
-  <meta name="description" content="Discover Permanent Pictorial Cancellations at Indian post offices near you. Find their post offices and straight-line distances." />
-  <title>Postmark Trail · Find pictorial cancellations near you</title>
+  <meta name="description"
+    content="Find permanent pictorial cancellations (PPCs) at Indian post offices. Explore nearby PPCs, check distances and get Google Maps directions with PPC Compass.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PPC Compass | India's Permanent Pictorial Cancellation Finder">
+  <meta property="og:description"
+    content="Discover permanent pictorial cancellations at Indian post offices. Find nearby PPCs, check distances and get directions.">
+  <meta property="og:site_name" content="PPC Compass">
+  <title>Permanent Pictorial Cancellations in India | PPC Compass</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="data.js" defer></script>
   <script src="app.js" defer></script>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="shell topbar-inner">
-      <a class="brand" href="#top" aria-label="Postmark Trail home">
-        <span class="brand-mark" aria-hidden="true">P<span class="ring">◎</span></span>
-        <span class="brand-name">POSTMARK <b>TRAIL</b><small>INDIA'S PICTORIAL POSTMARK FINDER</small></span>
+  <header class="site-header">
+
+    <!-- Website Branding -->
+    <div class="shell masthead">
+
+      <a href="#top" class="masthead-brand">
+        PPC <span>COMPASS</span>
       </a>
-      <div class="topbar-right"><span class="edition">PHILATELIC EXPLORER</span><a class="top-link" href="#about">How it works <span aria-hidden="true">↗</span></a></div>
+
+      <p class="masthead-tagline">
+        India's Permanent Pictorial Cancellation Finder
+      </p>
+
     </div>
+
+    <!-- Main Navigation -->
+    <nav class="site-nav" aria-label="Main navigation">
+
+      <div class="shell site-nav-inner">
+
+        <a href="#loc-title">
+          Find Nearby
+        </a>
+
+        <a href="#about">
+          About PPCs
+        </a>
+
+        <a href="#collector-tips">
+          Before You Visit
+        </a>
+
+        <a href="https://rdsstampcollection.com/" target="_blank" rel="noopener noreferrer" class="nav-parent">
+          R D's Stamp Collection ↗
+        </a>
+
+      </div>
+
+    </nav>
+
   </header>
   <main id="top">
     <section class="hero">
       <div class="shell hero-content">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-rule"></span> DISCOVER THE ART OF THE POSTMARK</div>
-          <h1>Every postmark<br/>has a <em>place.</em></h1>
-          <p>Find permanent pictorial cancellations at post offices near you. See what's available in the directory, how far away it is, and where to go.</p>
-          <div class="hero-foot"><span class="tiny-symbol">✦</span> EXPLORE THE HERITAGE BEHIND EVERY IMPRESSION</div>
+
+          <div class="eyebrow">
+            <span class="eyebrow-rule"></span>
+            INDIA'S PERMANENT PICTORIAL CANCELLATION FINDER
+          </div>
+
+          <h1>
+            Find Permanent Pictorial<br>
+            <em>Cancellations Near You.</em>
+          </h1>
+
+          <p>
+            Find permanent pictorial cancellations (PPCs) at
+            Indian post offices near you. Explore the directory,
+            check distances and get directions before your visit.
+          </p>
+
+          <div class="hero-foot">
+            <span class="tiny-symbol">✦</span>
+            EXPLORE INDIA'S POSTAL HERITAGE
+          </div>
+
         </div>
         <div class="postmark-art" aria-hidden="true">
-          <div class="postmark-outline"><div class="arc-text arc-top">INDIA POST · PHILATELY</div><div class="stamp-heart">✧<span>✉</span>✧</div><div class="art-title">PICTORIAL<br/>CANCELLATIONS</div><div class="stamp-lines"><i></i><i></i><i></i></div></div>
-          <div class="postmark-side-note">THE ART OF EVERYWHERE <span>—</span> 01 / 26</div>
+          <div class="postmark-outline">
+            <div class="arc-text arc-top">INDIA POST · PHILATELY</div>
+            <div class="stamp-heart">✧<span>✉</span>✧</div>
+            <div class="art-title">PICTORIAL<br />CANCELLATIONS</div>
+            <div class="stamp-lines"><i></i><i></i><i></i></div>
+          </div>
+          <div class="postmark-side-note">
+            DISCOVER INDIA'S POSTAL HERITAGE
+          </div>
         </div>
       </div>
     </section>
 
     <div class="shell workspace">
       <section class="location-section card-panel" aria-labelledby="loc-title">
-        <div class="section-top"><div><div class="section-label">01 / START HERE</div><h2 id="loc-title">Where are you exploring?</h2></div><div class="privacy-tag">◌ &nbsp; Location stays in your browser</div></div>
+        <div class="section-top">
+          <div>
+            <div class="section-label">01 / START HERE</div>
+            <h2 id="loc-title">Where are you exploring?</h2>
+          </div>
+          <div class="privacy-tag">◌ &nbsp; Location is used to find nearby PPCs</div>
+        </div>
         <div class="location-controls">
           <div class="location-left">
-            <div class="location-status" id="location-status" role="status" aria-live="polite"><span class="pulse-dot"></span><span>Checking your location permission…</span></div>
-            <div class="location-buttons"><button class="button button-primary" id="locate-btn" type="button"><span aria-hidden="true">⌖</span> Use my current location</button><button class="button button-outline" id="clear-location" type="button" hidden>Clear location</button></div>
+
+            <div class="location-status" id="location-status" role="status" aria-live="polite">
+              <span class="pulse-dot"></span>
+              <span>Checking your location permission…</span>
+            </div>
+
+            <div class="location-buttons">
+
+              <button class="button button-primary" id="locate-btn" type="button">
+                <span aria-hidden="true">⌖</span>
+                Use / Refresh My Location
+              </button>
+
+              <button class="button button-outline" id="clear-location" type="button" hidden>
+                Clear location
+              </button>
+
+            </div>
+
+            <!-- Location permission guidance -->
+
+            <details class="advanced-location" id="location-help" hidden>
+
+              <summary>
+                Location blocked? Learn how to enable it
+              </summary>
+
+              <p>
+                <strong>Google Chrome:</strong>
+                Click the site controls icon beside the website
+                address. Open site permissions and allow Location.
+              </p>
+
+              <p>
+                <strong>Chrome on Android:</strong>
+                Open the site's information or permissions menu
+                and change Location to Allow.
+              </p>
+
+              <p>
+                <strong>Safari on iPhone:</strong>
+                Open the Page Menu, select Website Settings,
+                and change Location permission.
+              </p>
+
+              <p>
+                Once permission is enabled, click
+                <strong>Use / Refresh My Location</strong> again.
+              </p>
+
+            </details>
+
           </div>
           <div class="location-divider"><span>OR TRY A PLACE</span></div>
-          <div class="manual-block"><label for="manual-place">Choose a reference location</label><select id="manual-place"><option value="">Select a post office…</option><option value="bbs">Bhubaneswar GPO</option><option value="puri">Puri HO</option><option value="cuttack">Cuttack GPO</option><option value="konark">Konark SO</option></select><p class="input-note">Manual mode measures from the selected post office, not your device.</p></div>
+          <div class="manual-block"><label for="manual-place">Choose a reference location</label><select
+              id="manual-place">
+              <option value="">Select a post office…</option>
+              <option value="bbs">Bhubaneswar GPO</option>
+              <option value="puri">Puri HO</option>
+              <option value="cuttack">Cuttack GPO</option>
+              <option value="konark">Konark SO</option>
+            </select>
+            <p class="input-note">Manual mode measures from the selected post office, not your device.</p>
+          </div>
         </div>
-        <details class="advanced-location"><summary>Enter custom latitude and longitude</summary><form id="custom-location-form"><label>Latitude <input id="custom-lat" inputmode="decimal" type="number" min="6" max="38" step="any" placeholder="20.2723" required></label><label>Longitude <input id="custom-lon" inputmode="decimal" type="number" min="68" max="98" step="any" placeholder="85.8340" required></label><button class="button button-outline" type="submit">Use coordinates</button></form><p class="input-note">Useful when location permission is unavailable. Provide coordinates of your intended starting point.</p></details>
+        <details class="advanced-location">
+          <summary>Enter custom latitude and longitude</summary>
+          <form id="custom-location-form"><label>Latitude <input id="custom-lat" inputmode="decimal" type="number"
+                min="6" max="38" step="any" placeholder="20.2723" required></label><label>Longitude <input
+                id="custom-lon" inputmode="decimal" type="number" min="68" max="98" step="any" placeholder="85.8340"
+                required></label><button class="button button-outline" type="submit">Use coordinates</button></form>
+          <p class="input-note">Useful when location permission is unavailable. Provide coordinates of your intended
+            starting point.</p>
+        </details>
       </section>
 
-      <div class="metrics-strip" aria-label="Catalogue overview"><div class="metric"><strong id="metric-cancellations">—</strong><span>CATALOGUED CANCELLATIONS</span></div><div class="metric"><strong id="metric-offices">—</strong><span>POST OFFICES IN DIRECTORY</span></div><div class="metric"><strong id="metric-states">—</strong><span>STATES REPRESENTED</span></div><div class="metric data-metric"><span class="source-point"></span><span id="catalogue-label">ODISHA DIRECTORY · NOT LIVE AVAILABILITY</span></div></div>
+      <div class="metrics-strip" aria-label="Nearby search overview">
+
+        <div class="metric">
+          <strong id="metric-cancellations">—</strong>
+          <span>NEARBY PPCs SHOWN</span>
+        </div>
+
+        <div class="metric">
+          <strong id="metric-offices">—</strong>
+          <span>POST OFFICES IN RESULTS</span>
+        </div>
+
+        <div class="metric">
+          <strong id="metric-states">—</strong>
+          <span>STATES IN RESULTS</span>
+        </div>
+
+        <div class="metric data-metric">
+          <span class="source-point"></span>
+          <span id="catalogue-label">
+            EXPLORE INDIA'S POSTAL HERITAGE
+          </span>
+        </div>
+
+      </div>
 
       <div class="main-layout">
         <section class="results-column" aria-labelledby="results-title">
-          <div class="results-heading"><div><div class="section-label">02 / FIND YOUR POSTMARK</div><h2 id="results-title">Nearby cancellations<span class="gold-dot">.</span></h2><p class="results-subtitle" id="results-subtitle">Results will be sorted by distance once a starting location is available.</p></div><div class="count-bubble" id="result-count">—</div></div>
+          <div class="results-heading">
+            <div>
+              <div class="section-label">02 / FIND NEARBY PPCs</div>
+              <h2 id="results-title">Nearby cancellations<span class="gold-dot">.</span></h2>
+              <p class="results-subtitle" id="results-subtitle">Results will be sorted by distance once a starting
+                location is available.</p>
+            </div>
+            <div class="count-bubble" id="result-count">—</div>
+          </div>
           <div class="filters card-panel">
-            <label class="search-wrap" for="search-input"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search post office, cancellation, district, PIN…" autocomplete="off"/><span class="sr-only">Search cancellations</span></label>
-            <div class="filter-bottom"><label class="filter-select">Distance <select id="radius-select"><option value="25">Within 25 km</option><option value="50">Within 50 km</option><option value="100" selected>Within 100 km</option><option value="250">Within 250 km</option><option value="500">Within 500 km</option><option value="all">All distances</option></select></label><button id="saved-filter" class="saved-filter" type="button" aria-pressed="false">♡ Saved only</button></div>
+            <label class="search-wrap" for="search-input"><span aria-hidden="true">⌕</span><input id="search-input"
+                type="search" placeholder="Search post office, cancellation, district, PIN…" autocomplete="off" /><span
+                class="sr-only">Search cancellations</span></label>
+            <div class="filter-bottom"><label class="filter-select">Distance <select id="radius-select">
+
+                  <option value="25">
+                    Within 25 km
+                  </option>
+
+                  <option value="50">
+                    Within 50 km
+                  </option>
+
+                  <option value="100" selected>
+                    Within 100 km
+                  </option>
+
+                </select></label><button id="saved-filter" class="saved-filter" type="button" aria-pressed="false">♡
+                Saved only</button></div>
           </div>
           <div class="results-notice" id="results-notice" role="status"></div>
           <div class="results-list" id="results-list" aria-live="polite"></div>
-          <div class="bottom-note">Distances shown are <strong>straight-line estimates</strong> from your selected location to the mapped post office—not driving distances. Confirm availability with the office before travelling.</div>
+          <div class="bottom-note">Distances shown are <strong>straight-line estimates</strong> from your selected
+            location to the mapped post office—not driving distances. Confirm availability with the office before
+            travelling.</div>
         </section>
         <aside class="sidebar" id="about">
-          <div class="sidebar-card notice-card"><div class="section-label">A COLLECTOR'S NOTE</div><div class="notice-icon">✉</div><h3>A living postal heritage.</h3><p>Permanent pictorial cancellations celebrate India's monuments, places, wildlife and traditions. The design is applied at a designated postal office.</p><p>A published introduction date does <strong>not</strong> guarantee the counter is operational today.</p></div>
-          <div class="sidebar-card latest-card"><div class="section-label">RECENT RELEASE</div><div class="latest-date">12 OCTOBER 2026 · ODISHA</div><h3>10 new pictorial cancellations announced</h3><p>The directory includes the recently introduced Odisha designs and their supplied issuing-office coordinates. Confirm availability before visiting.</p></div>
-          <div class="sidebar-card tips-card"><div class="section-label">BEFORE YOU VISIT</div><ol><li>Check the post office and PIN code.</li><li>Confirm the PPC device is currently available.</li><li>Ask about counter hours and postage requirements.</li><li>Carry stamped covers or postcards as appropriate.</li></ol></div>
-          <div class="source-credit">RD's Stamp Collection<p>Independent philatelic utility. Not affiliated with India Post. Catalogue status is not live counter confirmation.</p></div>
+          <div class="sidebar-card notice-card">
+            <div class="section-label">A COLLECTOR'S NOTE</div>
+            <div class="notice-icon">✉</div>
+            <h3>A living postal heritage.</h3>
+            <p>
+              Permanent Pictorial Cancellations (PPCs) are
+              special postal cancellations used at designated
+              post offices. Their designs depict monuments,
+              heritage sites, wildlife, cultural traditions
+              and other subjects of local significance.
+            </p>
+
+            <p>
+              PPC Compass helps collectors find post offices
+              associated with permanent pictorial cancellations
+              across India, calculate nearby distances and
+              get directions.
+            </p>
+
+            <p>
+              A recorded introduction date does not guarantee
+              that the cancellation device is currently
+              available at the counter.
+            </p>
+          </div>
+          <div class="sidebar-card latest-card">
+            <div class="section-label">RECENT RELEASE</div>
+            <div class="latest-date">12 OCTOBER 2026 · ODISHA</div>
+            <h3>10 new pictorial cancellations announced</h3>
+            <p>The directory includes the recently introduced Odisha designs and their supplied issuing-office
+              coordinates. Confirm availability before visiting.</p>
+          </div>
+          <div class="sidebar-card tips-card" id="collector-tips">
+            <div class="section-label">BEFORE YOU VISIT</div>
+            <ol>
+              <li>Check the post office and PIN code.</li>
+              <li>Confirm the PPC device is currently available.</li>
+              <li>Ask about counter hours and postage requirements.</li>
+              <li>Carry stamped covers or postcards as appropriate.</li>
+            </ol>
+          </div>
+          <div class="source-credit">R D's Stamp Collection<p>Independent philatelic utility. Not affiliated with India
+              Post. Catalogue status is not live counter confirmation.</p>
+          </div>
         </aside>
       </div>
     </div>
   </main>
-  <footer><div class="shell footer-inner"><span>POSTMARK TRAIL <span class="footer-small">/ RDS STAMP COLLECTION</span></span><span>MADE FOR CURIOUS COLLECTORS · INDIA</span></div></footer>
+  <footer>
+    <div class="shell footer-inner"><span>PPC COMPASS <span class="footer-small">/ RD's Stamp
+          Collection</span></span><span>MADE FOR CURIOUS COLLECTORS · INDIA</span></div>
+  </footer>
 </body>
+
 </html>

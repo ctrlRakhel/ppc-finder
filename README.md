@@ -1,12 +1,6 @@
-# Postmark Trail — PPC Finder (Odisha sample)
+# PPC Compass — India's Permanent Pictorial Cancellation Finder
 
 A static, mobile-first finder for Permanent Pictorial Cancellations. Maintained for RDS Stamp Collection. Not affiliated with India Post.
-
-## Published directory
-
-The included `ppc-records.csv`, `ppc-records.json`, and `data.js` contain the same 16 Odisha records and coordinates supplied by the project owner. All `sourceUrl` values are empty. **The site has no research-source or third-party directory links.** The only outbound web links are optional Google Maps **Directions** links when a visitor selects an office; these are navigation actions, not research citations.
-
-No coordinates or present-day operational status were independently verified in this update. The `Working` values reflect the supplied catalogue and should not be treated as live counter availability.
 
 ## Deploy to GitHub Pages
 
@@ -14,18 +8,30 @@ Upload the contents of this folder directly to the repository root. In repositor
 
 Core files: `index.html`, `styles.css`, `app.js`, `data.js`.
 
-## Update the public directory
+## Architecture
 
-Edit `ppc-records.csv`, then update both `ppc-records.json` and `data.js` from that CSV, or directly edit `data.js` to update the array assigned to `window.PPC_STARTER_DATA`. **The live site reads `data.js`.** Merely uploading a new CSV or JSON file does not update the public catalogue.
+PPC Compass is a mobile-first application for locating
+Permanent Pictorial Cancellations at Indian post offices.
 
-The 12 fields are:
-`id,title,introduced,postOffice,district,state,pin,recordStatus,image_url,latitude,longitude,sourceUrl`
+Frontend:
+GitHub Pages — HTML, CSS and JavaScript
 
-`introduced` uses `YYYY-MM-DD`. PIN codes remain six-character strings. Numeric latitude/longitude represent the issuing post office. Keep `sourceUrl` empty if you do not want to store reference links. The app never displays source URLs, even if an imported record includes one.
+Backend:
+Cloudflare Workers
 
-## Import for personal testing
+Database:
+Cloudflare D1
 
-Open **Manage local catalogue** and select a CSV or JSON file with the 12-column schema. This changes records **only in that visitor’s browser**, not for all visitors. It supports up to 2,500 records. Use **Restore site directory** to reset a personal import.
+Data source:
+Private PPC directory
+
+The browser sends selected or device-derived coordinates
+to the backend API.
+
+The API returns nearby PPC records and calculated
+straight-line distances.
+
+The complete directory is not downloaded by the frontend.
 
 ## Limitations
 
