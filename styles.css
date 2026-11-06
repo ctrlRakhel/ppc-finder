@@ -1410,4 +1410,107 @@ footer {
     font-size: 35px;
   }
 
+  /* PPC Compass announcement ticker */
+
+  .ppc-ticker {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 38px;
+    background: #f8f5f0;
+    border-top: 1px solid #eee7df;
+    border-bottom: 1px solid #eee7df;
+    overflow: hidden;
+  }
+
+  .ppc-ticker-label {
+    flex-shrink: 0;
+    padding: 12px 16px;
+    background: #b76e32;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+    z-index: 1;
+  }
+
+  .ppc-ticker-window {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .ppc-ticker-track {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    width: max-content;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: ppc-scroll 28s linear infinite;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: #173c46;
+  }
+
+  .ppc-ticker-dot {
+    color: #b76e32;
+    font-size: 9px;
+  }
+
+  .ppc-ticker-track a {
+    color: #b76e32;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .ppc-ticker-track a:hover {
+    text-decoration: underline;
+  }
+
+  .ppc-ticker:hover .ppc-ticker-track,
+  .ppc-ticker:focus-within .ppc-ticker-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes ppc-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Mobile adjustments */
+
+  @media (max-width: 600px) {
+    .ppc-ticker-label {
+      padding: 12px 10px;
+      font-size: 9px;
+    }
+
+    .ppc-ticker-track {
+      font-size: 10px;
+      gap: 20px;
+      animation-duration: 24s;
+    }
+  }
+
+  /* Accessibility */
+
+  @media (prefers-reduced-motion: reduce) {
+    .ppc-ticker-track {
+      animation: none;
+      padding-left: 12px;
+    }
+
+    .ppc-ticker-window {
+      overflow-x: auto;
+    }
+  }
+
 }
